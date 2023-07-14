@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       kiểm tra  các số là số nguyên tố trong mảng.
+       bước 1: số nguyên tố là gì?
+        - số nguyên tố là số nguyên lơn 1 chia hết cho 1 và chính nó
+        - 2,3,5,7,11,13,17,19,23
+        bước 2 dùng for để kiểm tra 
+     -->
+     
+     <script>
+        let listNumbers=[3,6,7,8,9,11,14,19,59998789];
+        let count=0;
+        let array=[];
+        for (let i = 0; i < listNumbers.length; i++) {
+            if(listNumbers[i]>=2){
+                for (let j = 1; j <= listNumbers[i]; j++) {
+                    if(listNumbers[i]%j==0){
+                            //chạy 2 lần
+                            count++;
+                    }
+                }
+                if(count==2){
+                    array.push(listNumbers[i]);
+                    count=0;
+                }else{
+                    count=0;
+                }
+            }
+        }
+        console.log(array);
+       
+     </script>
+</body>
+</html>
